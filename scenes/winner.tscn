@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://bgmwdlavml50d"]
+
+[ext_resource type="Script" uid="uid://c6enquc8ofku7" path="res://scripts/game_over.gd" id="1_6vg2h"]
+[ext_resource type="FontFile" uid="uid://csid0dijji0ry" path="res://Fonts/PixelifySans-Bold.ttf" id="2_osg38"]
+[ext_resource type="FontFile" uid="uid://per06jckp5ja" path="res://Fonts/PixelifySans-Regular.ttf" id="3_74nyh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wqhvx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tbwuq"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=512111442]
+script = ExtResource("1_6vg2h")
+
+[node name="Control" type="Control" parent="." unique_id=442704829]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=823947652]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1520336507]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=2031963560]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_osg38")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wqhvx")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_wqhvx")
+text = "Restart"
+
+[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1894237356]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_osg38")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tbwuq")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_tbwuq")
+text = "Quit"
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1764400972]
+offset_top = 52.0
+offset_right = 274.0
+offset_bottom = 52.0
+theme_override_constants/margin_top = -25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=65034758]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2066199227]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.83137256, 0.15294118, 0.003921569, 1)
+theme_override_fonts/font = ExtResource("2_osg38")
+theme_override_font_sizes/font_size = 50
+text = "WINNER!!!"
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1691181213]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2" unique_id=43096301]
+layout_mode = 2
+
+[node name="score" type="Label" parent="MarginContainer2/VBoxContainer" unique_id=508608255]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.83137256, 0.15294118, 0.003921569, 1)
+theme_override_fonts/font = ExtResource("2_osg38")
+theme_override_font_sizes/font_size = 20
+text = "Score"
+
+[node name="ScoreNumber" type="Label" parent="MarginContainer2/VBoxContainer" unique_id=1152218013]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_74nyh")
+theme_override_font_sizes/font_size = 20
+text = "0000"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://n2nq2xigwhgp"]
+
+[ext_resource type="FontFile" uid="uid://per06jckp5ja" path="res://Fonts/PixelifySans-Regular.ttf" id="1_5ysmq"]
+[ext_resource type="Script" uid="uid://nor2y7ft2j4a" path="res://scripts/hud.gd" id="1_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://byu1ad25rb11w" path="res://Assets/life_sprite.png" id="2_6fi6k"]
+[ext_resource type="FontFile" uid="uid://csid0dijji0ry" path="res://Fonts/PixelifySans-Bold.ttf" id="3_uo2fv"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1482262211]
+script = ExtResource("1_6fi6k")
+
+[node name="Control" type="Control" parent="." unique_id=1091634558]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control" unique_id=998279578]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="life" type="Label" parent="Control/VBoxContainer2" unique_id=362238644]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.83137256, 0.15294118, 0.003921569, 1)
+theme_override_fonts/font = ExtResource("1_5ysmq")
+theme_override_font_sizes/font_size = 12
+text = "life"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer2" unique_id=1452663828]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer2/HBoxContainer" unique_id=1987853043]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_6fi6k")
+stretch_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1645671077]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -69.0
+offset_bottom = 40.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="score" type="Label" parent="Control/VBoxContainer" unique_id=2068793304]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.83137256, 0.15294118, 0.003921569, 1)
+theme_override_fonts/font = ExtResource("3_uo2fv")
+theme_override_font_sizes/font_size = 12
+text = "Score"
+
+[node name="ScoreNumber" type="Label" parent="Control/VBoxContainer" unique_id=1995589550]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_5ysmq")
+theme_override_font_sizes/font_size = 12
+text = "0000"
